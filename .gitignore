@@ -9,3 +9,8 @@ __pycache__/
 # IDE
 .vscode/
 .idea/
+
+# Node.js / Next.js
+node_modules/
+.next/
+
