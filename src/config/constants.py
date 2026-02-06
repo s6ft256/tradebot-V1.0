@@ -1,0 +1,59 @@
+"""
+Constants for the trading bot.
+"""
+from __future__ import annotations
+
+# Trading symbols
+SYMBOL_BTC_USDT = "BTC/USDT"
+SYMBOL_ETH_USDT = "ETH/USDT"
+
+# Timeframes
+TIMEFRAME_1M = "1m"
+TIMEFRAME_5M = "5m"
+TIMEFRAME_15M = "15m"
+TIMEFRAME_1H = "1h"
+TIMEFRAME_4H = "4h"
+TIMEFRAME_1D = "1d"
+
+# Trade sides
+SIDE_BUY = "buy"
+SIDE_SELL = "sell"
+
+# Order types
+ORDER_TYPE_MARKET = "market"
+ORDER_TYPE_LIMIT = "limit"
+ORDER_TYPE_STOP_LOSS = "stop_loss"
+ORDER_TYPE_TAKE_PROFIT = "take_profit"
+
+# Trend directions
+TREND_BULLISH = "BULLISH"
+TREND_BEARISH = "BEARISH"
+TREND_NEUTRAL = "NEUTRAL"
+
+# AI recommendations
+AI_ALLOW = "ALLOW"
+AI_REDUCE_RISK = "REDUCE_RISK"
+AI_HALT = "HALT"
+
+# Regimes
+REGIME_TRENDING = "TRENDING"
+REGIME_CHOPPY = "CHOPPY"
+REGIME_RANGING = "RANGING"
+REGIME_VOLATILE = "VOLATILE"
+
+# Position states
+POSITION_OPEN = "OPEN"
+POSITION_CLOSED = "CLOSED"
+
+# Exit reasons
+EXIT_STOP_LOSS = "STOP_LOSS"
+EXIT_TAKE_PROFIT = "TAKE_PROFIT"
+EXIT_TRAILING_STOP = "TRAILING_STOP"
+EXIT_TIME_LIMIT = "TIME_LIMIT"
+EXIT_MANUAL = "MANUAL"
+EXIT_EMERGENCY = "EMERGENCY"
+
+# Risk limits (absolute minimums - CANNOT be overridden)
+ABSOLUTE_MAX_RISK_PER_TRADE = 5.0  # percent
+ABSOLUTE_MAX_DAILY_LOSS = 10.0  # percent
+ABSOLUTE_MAX_DRAWDOWN = 20.0  # percent
