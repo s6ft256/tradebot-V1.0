@@ -1,0 +1,45 @@
+Metadata-Version: 2.4
+Name: paid-trading-bot
+Version: 0.1.0
+Summary: Rule-based crypto trading bot with AI-assisted advisory layer
+Author: 
+License: Proprietary
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.110
+Requires-Dist: uvicorn[standard]>=0.27
+Requires-Dist: pydantic>=2.6
+Requires-Dist: pydantic-settings>=2.2
+Requires-Dist: httpx>=0.27
+Requires-Dist: ccxt>=4.2
+Requires-Dist: SQLAlchemy>=2.0
+Requires-Dist: asyncpg>=0.29
+Requires-Dist: cryptography>=42.0
+Requires-Dist: python-dotenv>=1.0
+Requires-Dist: orjson>=3.9
+Provides-Extra: test
+Requires-Dist: pytest>=8.0; extra == "test"
+Requires-Dist: pytest-asyncio>=0.23; extra == "test"
+
+# paid-trading-bot
+
+Backend + frontend architecture skeleton for a rule-based crypto trading bot with AI-assisted advisory.
+
+## Running the Application
+
+### Backend (FastAPI)
+```bash
+# Install Python dependencies
+pip install -e .
+
+# Run the backend server
+uvicorn paid_trading_bot.api.main:app --reload --port 8000
+```
+
+### Frontend (Next.js)
+```bash
+cd frontend
+npm run dev
+```
+
+The UI will be available at `http://localhost:3000` and will proxy API requests to the backend at `http://localhost:8000`.
