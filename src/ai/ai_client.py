@@ -7,12 +7,19 @@ import os
 import json
 from typing import Dict, Any, Optional
 from dataclasses import dataclass
-import google.generativeai as genai
 
 from config.settings import CONFIG
 from monitoring.logger import get_logger
 
 logger = get_logger(__name__)
+
+try:
+    import google.generativeai as genai
+    GENAI_AVAILABLE = True
+except ImportError:
+    genai = None
+    GENAI_AVAILABLE = False
+    logger.warning("google.generativeai not installed - AI layer disabled")
 
 
 @dataclass
@@ -46,6 +53,11 @@ class GeminiClient:
         """Initialize Gemini client."""
         self.api_key = api_key or CONFIG.ai.gemini_api_key
         self.model_name = model or CONFIG.ai.gemini_model
+        
+        if not GENAI_AVAILABLE:
+            logger.debug("google.generativeai not installed - AI layer disabled")
+            self._enabled = False
+            return
         
         if not self.api_key:
             logger.warning("No Gemini API key configured - AI layer disabled")
