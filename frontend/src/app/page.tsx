@@ -96,7 +96,7 @@ export default function Dashboard() {
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader className="pb-2">
               <CardTitle className="text-sm font-medium text-slate-400 flex items-center gap-2">
-                {dashboard?.daily_pnl_percent >= 0 ? (
+                {(dashboard?.daily_pnl_percent ?? 0) >= 0 ? (
                   <TrendingUp className="w-4 h-4 text-emerald-400" />
                 ) : (
                   <TrendingDown className="w-4 h-4 text-rose-400" />
