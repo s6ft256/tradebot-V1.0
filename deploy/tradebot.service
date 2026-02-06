@@ -1,0 +1,25 @@
+[Unit]
+Description=Autonomous Crypto Trading Bot
+After=network.target
+
+[Service]
+Type=simple
+User=tradebot
+WorkingDirectory=/opt/tradebot/src
+Environment=PYTHONUNBUFFERED=1
+Environment=PAPER_TRADING=true
+Environment=LOG_LEVEL=INFO
+Environment=BINANCE_API_KEY=your_api_key_here
+Environment=BINANCE_API_SECRET=your_api_secret_here
+Environment=BINANCE_TESTNET=true
+Environment=MAX_RISK_PER_TRADE=1.0
+Environment=MAX_DAILY_LOSS=3.0
+Environment=MAX_DRAWDOWN=10.0
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/var/log/tradebot/tradebot.log
+StandardError=append:/var/log/tradebot/tradebot.error.log
+
+[Install]
+WantedBy=multi-user.target
